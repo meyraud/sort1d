@@ -74,15 +74,9 @@ function partition(mainArray,low,high,animations) {
      
   while (i<=j){
     while (mainArray[i] < pivot) {
-      animations.push([i,pivot]);
-      animations.push([i,pivot]);
-      animations.push([i, mainArray[i]]);
       i++;
     }
     while (mainArray[j] > pivot) {
-      animations.push([j,pivot]);
-      animations.push([j,pivot]);
-      animations.push([j, mainArray[j]]);
       j--;
     }
     if (i <= j) {
