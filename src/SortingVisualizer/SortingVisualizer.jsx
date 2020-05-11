@@ -9,7 +9,7 @@ import './SortingVisualizer.css';
 const ANIMATION_SPEED_MS = 0.15;
 
 // Change this value for the number of bars (value) in the array.
-const NUMBER_OF_ARRAY_BARS = 140;
+const NUMBER_OF_ARRAY_BARS = 92;
 
 // This is the main color of the array bars.
 const PRIMARY_COLOR = 'gray';
@@ -36,6 +36,10 @@ export default class SortingVisualizer extends React.Component {
       array.push(randomIntFromInterval(5, 287));
     }
     let numb=287;
+    array.push(numb);
+    for (let i = 0; i < NUMBER_OF_ARRAY_BARS; i++) {
+      array.push(randomIntFromInterval(5, 287));
+    }
     array.push(numb);
     for (let i = 0; i < NUMBER_OF_ARRAY_BARS; i++) {
       array.push(randomIntFromInterval(5, 287));
