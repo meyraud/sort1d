@@ -9,7 +9,7 @@ import './SortingVisualizer.css';
 const ANIMATION_SPEED_MS = 0.15;
 
 // Change this value for the number of bars (value) in the array.
-const NUMBER_OF_ARRAY_BARS = 287;
+const NUMBER_OF_ARRAY_BARS = 140;
 
 // This is the main color of the array bars.
 const PRIMARY_COLOR = 'gray';
@@ -33,7 +33,12 @@ export default class SortingVisualizer extends React.Component {
   resetArray() {
     const array = [];
     for (let i = 0; i < NUMBER_OF_ARRAY_BARS; i++) {
-      array.push(randomIntFromInterval(5, 230));
+      array.push(randomIntFromInterval(5, 287));
+    }
+    let numb=287;
+    array.push(numb);
+    for (let i = 0; i < NUMBER_OF_ARRAY_BARS; i++) {
+      array.push(randomIntFromInterval(5, 287));
     }
     this.setState({array});
   }
@@ -138,7 +143,9 @@ export default class SortingVisualizer extends React.Component {
     const {array} = this.state;
 
     return (
+      <React.Fragment>
       <div className="array-container">
+	
         {array.map((value, idx) => (
           <div
             className="array-bar"
@@ -147,13 +154,16 @@ export default class SortingVisualizer extends React.Component {
               backgroundColor: PRIMARY_COLOR,
               height: `${value}px`,
             }}></div>
-        ))}
-        <button onClick={() => this.resetArray()}>Generate New Array</button>
+        ))}</div>
+	
+      <div className="array-container2">
+        <button onClick={() => this.resetArray()}>Initialize Array</button>
         <button onClick={() => this.mergeSort()}>Merge Sort</button>
         <button onClick={() => this.quickSort()}>Quick Sort</button>
         <button onClick={() => this.heapSort()}>Heap Sort</button>
         <button onClick={() => this.bubbleSort()}>Bubble Sort</button>
       </div>
+    </React.Fragment>
     );
   }
 }

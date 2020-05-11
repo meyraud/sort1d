@@ -1,8 +1,18 @@
 .array-container {
-  position: absolute;
-  center: 100px;
+  position: sticky;
+  center: 0px;
   top:200px;
+  margin:4px;
+  padding: 5px;
   
+  /* top: 100px; left:100px;*/
+}
+
+.array-container2 {
+  position: relative;
+  top:20px;
+  margin: 2px;
+  padding: 1px;
   /* top: 100px; left:100px;*/
 }
 
